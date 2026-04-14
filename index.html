@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cashback</title>
+
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <h1 class="logo">Cashback</h1>
+
+        <div class="are_historico">
+            <button class="botao_historico" onclick="botao_Historico()" class="btn-historico">Ver Histórico</button>
+
+            <div class="historico_botao" id="historico-container" style="display: none;">
+
+                <h3>Histórico</h3>
+
+                <ul id="historico-list"></ul>
+            </div>
+        </div>    
+    </header>
+
+    <main class="corpo">
+
+        <div class="quadrado">
+            
+            <div class="campo_valor">
+
+                <label class="label_1" for="valor_da_compra">Valor da Compra</label>
+
+                <input class= "input" type="text" id="valor" placeholder="Digite o valor"/>
+
+            </div>
+
+            <div class="campo_valor">
+
+                <label class="label_1" for="valor_do_desconto">Valor do Desconto</label>
+
+                <input class= "input" type="text" id="desconto" placeholder="Digite o valor do desconto %"/>
+
+            </div>
+
+            <div class="campo_cliente">
+
+                <label class="label_2" for="cliente">Cliente</label>
+                
+                <input class="nome_cliente" type="text" id="nome_cliente" placeholder="Digite o seu nome"/>
+
+                <select class="seletor" id="tipo_cliente">
+
+                    <option value="" disabled selected>Selecione o tipo de cliente</option>
+
+                    <option value="vip">Cliente VIP</option>
+
+                    <option value="regular">Cliente Comum</option>
+                </select>
+            </div>
+
+            <div class="botao">
+
+                <button onclick="calcular()" class="calcular" type="button">Calcular Casback</button>
+
+                <h3 class="resultado" id="resultado"></h3>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        
+        <p class="direitos">&copy; 2026 Cashback. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
