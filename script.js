@@ -7,7 +7,7 @@ async  function calcular(){
 
     const vip = tipo_cliente === "vip";
 
-    const response = await fetch("http://localhost:5000/calcular", {
+    const response = await fetch("/api/calcular", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({valor, desconto, vip, nome})
@@ -24,7 +24,7 @@ async  function calcular(){
 
 async function CarregarHistorico(){
 
-    const response = await fetch("http://localhost:5000/historico");
+    const response = await fetch("/api/historico");
     const historico = await response.json();    
 
     const historicoList = document.getElementById("historico-list");
@@ -42,7 +42,7 @@ function botao_Historico() {
 
     if (container.style.display === "none") {
         container.style.display = "block";
-        CarregarHistorico(); // carrega quando abre
+        CarregarHistorico();
     } else {
         container.style.display = "none";
     }
