@@ -9,7 +9,7 @@ flask_cors.CORS(app)
 
 Tabela.Base.metadata.create_all(bind=Conexao.engine)
 
-@app.route("/calcular", methods=["POST"])
+@app.route("/api/calcular", methods=["POST"])
 
 def calcular():
     try:
@@ -36,7 +36,7 @@ def calcular():
         print("ERRO:", e)
         return flask.jsonify({"erro": str(e)}), 500
 
-@app.route("/historico", methods=["GET"])
+@app.route("/api/historico", methods=["GET"])
 
 def historico():
 
