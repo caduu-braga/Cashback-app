@@ -23,7 +23,7 @@ def calcular():
 
         banco_dados = Conexao.SessionLocal()
 
-        ip = flask.request.remote_addr
+        ip = flask.request.headers.get("x-forwarded-for", flask.request.remote_addr)
 
         registro = Tabela.Historico(ip=ip,nome=nome, valor=valor, desconto=desconto, cashback=cashback) 
 
@@ -41,7 +41,7 @@ def calcular():
 def historico():
 
     banco_dados = Conexao.SessionLocal()
-    ip = flask.request.remote_addr
+    ip = flask.request.headers.get("x-forwarded-for", flask.request.remote_addr)
     registros = banco_dados.query(Tabela.Historico).filter(Tabela.Historico.ip == ip).all()
 
     historico_list = []
